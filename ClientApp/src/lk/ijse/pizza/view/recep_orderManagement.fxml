@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="recep_orderManagementAnchPane" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pizza.controller.Recep_OrderManagementController">
+   <children>
+      <Pane prefHeight="650.0" prefWidth="950.0">
+         <children>
+            <ImageView fitHeight="590.0" fitWidth="969.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/otherBg.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="60.0" prefWidth="950.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="120.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="120.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="240.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="360.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="480.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="600.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="720.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="840.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="60.0" prefWidth="950.0">
+                     <children>
+                        <Label layoutX="438.0" layoutY="19.0" text="Pizza Express Management System" textFill="#df574b">
+                           <font>
+                              <Font name="Unicorn Regular" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="866.0" layoutY="5.0">
+                           <image>
+                              <Image url="@../asset/pizzaLogo2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="backToDashIcon" layoutX="20.0" layoutY="8.0" onMouseClicked="#backToDashIcon_onMouseClicked">
+                           <image>
+                              <Image url="@../asset/icons8-back-48(1).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutY="60.0" opacity="0.9" prefHeight="590.0" prefWidth="950.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="4.0" layoutY="537.0" prefHeight="50.0" prefWidth="935.0" style="-fx-border-radius: 10; -fx-border-color: #C7C7C7; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <JFXButton fx:id="newBtn" buttonType="RAISED" layoutX="268.0" layoutY="10.0" onAction="#newBtn_onAction" prefHeight="30.0" prefWidth="81.0" styleClass="btnPane-newBtn" stylesheets="@style/recep_itemmanagement.css" text="New">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="saveBtn" buttonType="RAISED" layoutX="437.0" layoutY="10.0" onAction="#saveBtn_onAction" prefHeight="30.0" prefWidth="81.0" styleClass="btnPane-saveBtn" stylesheets="@style/recep_itemmanagement.css" text="Save">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="deleteBtn" buttonType="RAISED" layoutX="607.0" layoutY="10.0" onAction="#deleteBtn_onAction" prefHeight="30.0" prefWidth="81.0" styleClass="btnPane-deleteBtn" stylesheets="@style/recep_itemmanagement.css" text="Delete">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="updateBtn" buttonType="RAISED" layoutX="493.0" layoutY="10.0" onAction="#updateBtn_onAction" prefHeight="30.0" prefWidth="81.0" styleClass="btnPane-updateBtn" stylesheets="@style/recep_itemmanagement.css" text="Update" visible="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Italic" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="7.0" layoutY="4.0" prefHeight="528.0" prefWidth="434.0" style="-fx-border-color: #C7C7C7; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <JFXTextField fx:id="orderIDTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="23.0" layoutY="14.0" mouseTransparent="true" prefHeight="26.0" prefWidth="120.0" promptText="Order ID">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="qtyTF" focusColor="#ff5c58" labelFloat="true" layoutX="312.0" layoutY="235.0" onAction="#qtyTF_onAction" onKeyReleased="#qtyTF_onKeyReleased" prefHeight="26.0" prefWidth="105.0" promptText="Qty">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="customerNameTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="187.0" layoutY="95.0" mouseTransparent="true" prefHeight="26.0" prefWidth="235.0" promptText="Customer Name">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="8.0" layoutY="65.0" text="Customer" textFill="#8f8f8f" />
+                        <JFXComboBox fx:id="customerIDCombBox" focusColor="#ff5c58" labelFloat="true" layoutX="23.0" layoutY="95.0" onAction="#customerIDCombBox_onAction" prefHeight="25.0" prefWidth="127.0" promptText="Customer ID" />
+                        <SplitPane layoutX="19.0" layoutY="58.0" />
+                        <JFXComboBox fx:id="itemCodeComboBox" focusColor="#ff5c58" labelFloat="true" layoutX="22.0" layoutY="180.0" onAction="#itemCodeComboBox_onAction" prefHeight="25.0" prefWidth="105.0" promptText="Item Code" />
+                        <JFXTextField fx:id="itemNameTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="151.0" layoutY="180.0" mouseTransparent="true" prefHeight="26.0" prefWidth="267.0" promptText="Item Name">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="10.0" layoutY="148.0" text="Item" textFill="#8f8f8f" />
+                        <Label layoutX="24.0" layoutY="497.0" mouseTransparent="true" text="Status : ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="statusTF" layoutX="74.0" layoutY="495.0" mouseTransparent="true" prefHeight="25.0" prefWidth="235.0" />
+                        <JFXButton fx:id="addItemBtn" buttonType="RAISED" layoutX="337.0" layoutY="303.0" onAction="#addItemBtn_onAction" prefHeight="30.0" prefWidth="70.0" styleClass="addMoreItemBtn" stylesheets="@style/recep_ordermanagement.css" text="Add">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="13.0" />
+                           </font>
+                           <ripplerFill>
+                              <LinearGradient endX="0.5380952380952381" endY="1.0" startY="1.0">
+                                 <stops>
+                                    <Stop color="#00c9ff" />
+                                    <Stop color="#94ff9f" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <TableView fx:id="orderItemTbl" layoutX="120.0" layoutY="283.0" onMouseClicked="#orderItemTbl_onMouseClicked" prefHeight="131.0" prefWidth="195.0">
+                          <columns>
+                            <TableColumn prefWidth="68.0" text="Item Code" />
+                            <TableColumn maxWidth="83.0" prefWidth="59.0" text="Qty" />
+                              <TableColumn maxWidth="67.0" prefWidth="67.0" text="Price" />
+                          </columns>
+                        </TableView>
+                        <JFXButton fx:id="updateItemBtn" buttonType="RAISED" layoutX="28.0" layoutY="303.0" onAction="#updateItemBtn_onAction" prefHeight="30.0" prefWidth="70.0" styleClass="addMoreItemBtn" stylesheets="@style/recep_ordermanagement.css" text="Update">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="13.0" />
+                           </font>
+                           <ripplerFill>
+                              <LinearGradient endX="0.5380952380952381" endY="1.0" startY="1.0">
+                                 <stops>
+                                    <Stop color="#00c9ff" />
+                                    <Stop color="#94ff9f" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <JFXButton fx:id="deleteItemBtn" buttonType="RAISED" layoutX="28.0" layoutY="363.0" onAction="#deleteItemBtn_onAction" prefHeight="30.0" prefWidth="70.0" styleClass="addMoreItemBtn" stylesheets="@style/recep_ordermanagement.css" text="Delete">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="13.0" />
+                           </font>
+                           <ripplerFill>
+                              <LinearGradient endX="0.5380952380952381" endY="1.0" startY="1.0">
+                                 <stops>
+                                    <Stop color="#00c9ff" />
+                                    <Stop color="#94ff9f" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <JFXButton fx:id="clearItemBtn" buttonType="RAISED" layoutX="337.0" layoutY="363.0" onAction="#clearItemBtn_onAction" prefHeight="30.0" prefWidth="70.0" styleClass="addMoreItemBtn" stylesheets="@style/recep_ordermanagement.css" text="Clear">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="13.0" />
+                           </font>
+                           <ripplerFill>
+                              <LinearGradient endX="0.5380952380952381" endY="1.0" startY="1.0">
+                                 <stops>
+                                    <Stop color="#00c9ff" />
+                                    <Stop color="#94ff9f" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </ripplerFill>
+                        </JFXButton>
+                        <JFXTextField fx:id="employeeIDTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="305.0" layoutY="14.0" mouseTransparent="true" prefHeight="26.0" prefWidth="120.0" promptText="Employee ID">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="orderDateTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="172.0" layoutY="14.0" mouseTransparent="true" prefHeight="26.0" prefWidth="120.0" promptText="Order Date">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="19.0" layoutY="424.0" mouseTransparent="true" text="Total Amount : ">
+                           <font>
+                              <Font name="Century Gothic Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="totalAmountTF" layoutX="19.0" layoutY="440.0" mouseTransparent="true" prefHeight="25.0" prefWidth="130.0" promptText="0.00" />
+                        <JFXTextField fx:id="itemPriceTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="172.0" layoutY="235.0" mouseTransparent="true" prefHeight="26.0" prefWidth="96.0" promptText="Item Price">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="discountTF" focusColor="#ff5c58" labelFloat="true" layoutX="166.0" layoutY="435.0" onKeyReleased="#discountTF_onKeyReleased" onMouseClicked="#discountTF_onMouseClicked" prefHeight="26.0" prefWidth="70.0" promptText="Discount" text="0">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="285.0" layoutY="421.0" mouseTransparent="true" text="Net Amount : ">
+                           <font>
+                              <Font name="Century Gothic Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="netAmountTF" layoutX="285.0" layoutY="437.0" mouseTransparent="true" prefHeight="25.0" prefWidth="130.0" promptText="0.00" />
+                        <JFXTextField fx:id="itemSizeTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="21.0" layoutY="235.0" mouseTransparent="true" prefHeight="26.0" prefWidth="105.0" promptText="Item Size">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="223.0" layoutY="441.0" text="\%">
+                           <font>
+                              <Font name="Century Gothic Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="453.0" layoutY="4.0" prefHeight="528.0" prefWidth="483.0" style="-fx-border-color: #C7C7C7; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <TextField fx:id="searchBoxTF" layoutX="37.0" layoutY="14.0" onKeyReleased="#searchBoxTF_keyReleased" onMouseClicked="#searchBox_onMouseClick" prefHeight="25.0" prefWidth="195.0" promptText="Search" />
+                        <ImageView layoutX="208.0" layoutY="19.0">
+                           <image>
+                              <Image url="@../asset/icons8_Search_16px_1.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="orderManagementTbl" layoutX="14.0" layoutY="51.0" onMouseClicked="#orderManagementTbl_OnMouseClick" prefHeight="463.0" prefWidth="455.0">
+                           <columns>
+                              <TableColumn prefWidth="105.0" text="Order ID" />
+                              <TableColumn prefWidth="87.0" text="Order Date" />
+                              <TableColumn maxWidth="112.0" prefWidth="92.0" text="Customer ID" />
+                              <TableColumn maxWidth="120.0" prefWidth="85.0" text="Net Amount" />
+                              <TableColumn maxWidth="120.0" prefWidth="87.0" text="Status" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

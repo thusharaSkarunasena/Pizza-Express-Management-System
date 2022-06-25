@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="logInAnchPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pizza.controller.LogInControllerAll">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="810.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/logInBG.jpg" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane layoutX="469.0" layoutY="89.0" opacity="0.7" prefHeight="350.0" prefWidth="300.0" style="-fx-background-color: #ffffff; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-color: #FF7800; -fx-border-width: 2px;">
+               <children>
+                  <Label layoutX="38.0" layoutY="48.0" text="LogIn Here, ">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="userNameTF" focusColor="#ff7800" labelFloat="true" layoutX="40.0" layoutY="108.0" onAction="#userNameTF_onAction" prefHeight="32.0" prefWidth="225.0" promptText="Username">
+                     <font>
+                        <Font name="Century Gothic Italic" size="16.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="passwordPF" focusColor="#ff7800" labelFloat="true" layoutX="39.0" layoutY="190.0" onAction="#passwordPF_onAction" prefHeight="32.0" prefWidth="225.0" promptText="Password">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="logInBtn" buttonType="RAISED" layoutX="107.0" layoutY="272.0" onAction="#logInBtn_onAction" prefHeight="32.0" prefWidth="92.0" styleClass="logInPane-logInBtn" stylesheets="@style/login.css" text="Log In">
+                     <font>
+                        <Font name="Century Gothic Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Label fx:id="warningLbl" layoutX="38.0" layoutY="243.0" mouseTransparent="true" text=" " textFill="#df574b">
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="115.0" fitWidth="225.0" layoutX="295.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/pizzaExpressLogo1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="469.0" layoutY="40.0" text="We are Pizza Express &gt;&gt;&gt;" textFill="WHITE">
+               <font>
+                  <Font name="Unicorn Regular" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="253.0" layoutY="476.0" text="Developed by Me(Thushara Supun) In 2K18 @IJSE" textFill="WHITE">
+               <font>
+                  <Font name="Mark My Words" size="16.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

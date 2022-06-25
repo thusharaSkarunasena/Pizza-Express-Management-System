@@ -1,0 +1,9 @@
+.sidepane-HBox{
+    -fx-background-color: transparent;
+}
+
+.sidepane-HBox:hover{
+    -fx-background-color: transparent;
+    -fx-border-color: #df574b;
+    -fx-border-width: 0px 0px 0px 4px;
+}

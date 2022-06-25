@@ -1,0 +1,17 @@
+.btn{
+    -fx-background-color: linear-gradient(to left, #92fe9d 0%, #00c9ff 100%);
+    -fx-background-radius: 22;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: linear-gradient(to left, #92fe9d 0%, #00c9ff 100%);
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+}
+
+.btn:hover{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 22;
+    -fx-text-fill: linear-gradient(to left, #92fe9d 0%, #00c9ff 100%);
+    -fx-border-color: linear-gradient(to left, #92fe9d 0%, #00c9ff 100%);
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+}

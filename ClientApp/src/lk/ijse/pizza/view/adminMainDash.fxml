@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="adminAnchPane" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pizza.controller.AdminMainDashController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="950.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane opacity="0.8" prefHeight="120.0" prefWidth="950.0">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="950.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="369.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="492.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="833.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="738.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="950.0" layoutX="615.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG1.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="120.0" prefWidth="959.0">
+               <children>
+                  <ImageView fitHeight="120.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/pizzaExpressLogo1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="242.0" layoutY="60.0" text="Pizza Express Management System" textFill="#df574b">
+                     <font>
+                        <Font name="Unicorn Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dateLbl" layoutX="770.0" layoutY="24.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-alignment: center;" text="Date" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="DigifaceWide Regular" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="timeLbl" layoutX="770.0" layoutY="45.0" prefHeight="30.0" prefWidth="130.0" style="-fx-text-alignment: center;" text="Time" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="DigifaceWide Regular" size="24.0" />
+                     </font></Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutY="120.0" prefHeight="530.0" prefWidth="950.0">
+         <children>
+            <ImageView fitHeight="530.0" fitWidth="808.0" layoutX="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG2.jpg" />
+               </image></ImageView>
+            <ImageView fitHeight="530.0" fitWidth="950.0" layoutX="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/mainDashBG2.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="541.0" prefWidth="69.0">
+               <children>
+                  <Pane layoutX="-6.0" layoutY="2.0" opacity="0.8" prefHeight="530.0" prefWidth="69.0">
+                     <children>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="67.0" fitWidth="69.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="67.0" fitWidth="69.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="135.0" fitWidth="69.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/mainDashBG1.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="14.0">
+                           <image>
+                              <Image url="@../asset/icons8_Male_User_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="470.0">
+                           <image>
+                              <Image url="@../asset/icons8_Help_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="402.0">
+                           <image>
+                              <Image url="@../asset/icons8_High_Importance_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="339.0">
+                           <image>
+                              <Image url="@../asset/icons8_Settings_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="71.0">
+                           <image>
+                              <Image url="@../asset/icons8_Logout_Rounded_Left_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="139.0">
+                           <image>
+                              <Image url="@../asset/icons8_Shutdown_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="207.0">
+                           <image>
+                              <Image url="@../asset/icons8_View_More_32px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="18.0" layoutY="272.0">
+                           <image>
+                              <Image url="@../asset/icons8_Connect_32px.png" />
+                           </image>
+                        </ImageView>
+                        <HBox fx:id="profileHBox" layoutX="6.0" layoutY="-3.0" onMouseClicked="#profileHBox_onMouseClicked" prefHeight="54.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="logOutHBox" layoutX="6.0" layoutY="52.0" onMouseClicked="#logOutHBox_onMouseClicked" prefHeight="67.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="exitHBox" layoutX="6.0" layoutY="119.0" onMouseClicked="#exitHBox_onMouseClicked" prefHeight="67.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="viewMoreHBOX" layoutX="6.0" layoutY="187.0" onMouseClicked="#viewMoreHBOX_onMouseClicked" prefHeight="67.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="connectHBox" layoutX="6.0" layoutY="254.0" onMouseClicked="#connectHBox_onMouseClicked" prefHeight="67.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="settingsHBox" layoutX="6.0" layoutY="322.0" onMouseClicked="#settingsHBox_onMouseClicked" prefHeight="67.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="aboutHBox" layoutX="6.0" layoutY="385.0" onMouseClicked="#aboutHBox_onMouseClicked" prefHeight="67.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                        <HBox fx:id="helpHBox" layoutX="6.0" layoutY="449.0" onMouseClicked="#helpHBox_onMouseClicked" prefHeight="81.0" prefWidth="57.0" styleClass="sidepane-HBox" stylesheets="@style/adminmaindash.css">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                     </children>
+                  </Pane>
+               </children></Pane>
+            <Pane layoutX="59.0" opacity="0.9" prefHeight="530.0" prefWidth="891.0" style="-fx-background-color: #484848;">
+               <children>
+                  <Label layoutX="277.0" layoutY="506.0" text="Developed by Me(Thushara Supun) In 2K18 @IJSE" textFill="WHITE">
+                     <font>
+                        <Font name="Mark My Words" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="viewOrdersIcon" layoutX="116.0" layoutY="125.0" onMouseClicked="#viewOrdersIcon_onMouseClicked" onMouseEntered="#dashBoardIcon_onMouseEntered" onMouseExited="#dashBoardIcon_onMouseExited">
+                     <image>
+                        <Image url="@../asset/icons8_View_98px.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="employeeIcon" layoutX="367.0" layoutY="125.0" onMouseClicked="#employeeIcon_onMouseClick" onMouseEntered="#dashBoardIcon_onMouseEntered" onMouseExited="#dashBoardIcon_onMouseExited">
+                     <image>
+                        <Image url="@../asset/icons8_Payroll_98px.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="paymentIcon" layoutX="668.0" layoutY="125.0" onMouseClicked="#paymentIcon_onMouseClicked" onMouseEntered="#dashBoardIcon_onMouseEntered" onMouseExited="#dashBoardIcon_onMouseExited">
+                     <image>
+                        <Image url="@../asset/icons8_Cash_in_Hand_98px_1.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label fx:id="selectionTitleLbl" alignment="CENTER" layoutX="116.0" layoutY="344.0" prefHeight="41.0" prefWidth="633.0" style="-fx-text-alignment: center;" text="Selection Title" textFill="#0099cc">
+                     <font>
+                        <Font name="Century Gothic Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="selectionDescriptionLbl" alignment="CENTER" layoutX="118.0" layoutY="402.0" prefHeight="30.0" prefWidth="633.0" style="-fx-text-alignment: center;" text="Selection Description" textFill="WHITE">
+                     <font>
+                        <Font name="Accidental Presidency" size="24.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

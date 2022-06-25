@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="chef_completedOrdersAnchPane" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pizza.controller.Chef_CompletedOrdersController">
+   <children>
+      <Pane prefHeight="650.0" prefWidth="950.0">
+         <children>
+            <ImageView fitHeight="590.0" fitWidth="969.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/otherBg.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="60.0" prefWidth="950.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="120.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="120.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="240.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="360.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="480.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="600.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="720.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="840.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="60.0" prefWidth="950.0">
+                     <children>
+                        <Label layoutX="438.0" layoutY="19.0" text="Pizza Express Management System" textFill="#df574b">
+                           <font>
+                              <Font name="Unicorn Regular" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="866.0" layoutY="5.0">
+                           <image>
+                              <Image url="@../asset/pizzaLogo2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="backToDashIcon" layoutX="20.0" layoutY="8.0" onMouseClicked="#backToDashIcon_onMouseClicked">
+                           <image>
+                              <Image url="@../asset/icons8-back-48(1).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutY="60.0" opacity="0.9" prefHeight="590.0" prefWidth="950.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="22.0" layoutY="15.0" prefHeight="562.0" prefWidth="446.0" style="-fx-border-color: #C7C7C7; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <JFXTextField fx:id="orderIDTF" editable="false" focusColor="#ff5c58" labelFloat="true" layoutX="46.0" layoutY="33.0" mouseTransparent="true" prefHeight="26.0" prefWidth="149.0" promptText="Order ID">
+                           <font>
+                              <Font name="Times New Roman" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <SplitPane layoutX="19.0" layoutY="58.0" />
+                        <Label layoutX="80.0" layoutY="525.0" mouseTransparent="true" text="Status : ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="statusTF" layoutX="130.0" layoutY="523.0" mouseTransparent="true" prefHeight="25.0" prefWidth="235.0" />
+                        <TextField fx:id="startedTimeTF" layoutX="48.0" layoutY="104.0" mouseTransparent="true" />
+                        <TextField fx:id="endedTimeTF" layoutX="248.0" layoutY="104.0" mouseTransparent="true" />
+                        <TextField fx:id="orderDateTF" layoutX="248.0" layoutY="34.0" mouseTransparent="true" />
+                        <TableView fx:id="selectedOrderTbl" layoutX="46.0" layoutY="151.0" prefHeight="356.0" prefWidth="352.0">
+                           <columns>
+                              <TableColumn prefWidth="93.0" text="Item Code" />
+                              <TableColumn maxWidth="200.0" prefWidth="177.0" text="Item Name &amp; Size" />
+                              <TableColumn maxWidth="81.0" prefWidth="81.0" text="Qty" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="254.0" layoutY="14.0" text="Order Date : ">
+                           <font>
+                              <Font name="Century Gothic Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="52.0" layoutY="82.0" text="Started Time : ">
+                           <font>
+                              <Font name="Century Gothic Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="251.0" layoutY="82.0" text="Ended Time : ">
+                           <font>
+                              <Font name="Century Gothic Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="492.0" layoutY="15.0" prefHeight="562.0" prefWidth="430.0" style="-fx-border-color: #C7C7C7; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <TableView fx:id="completedOrdersTbl" layoutX="28.0" layoutY="51.0" onMouseClicked="#completedOrdersTbl_onMouseClicked" prefHeight="497.0" prefWidth="374.0">
+                           <columns>
+                              <TableColumn prefWidth="199.0" text="Order Date" />
+                              <TableColumn maxWidth="181.0" prefWidth="174.0" text="Order Id" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="53.0" layoutY="21.0" text="My Completed Orders">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="16.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#aaaaaa" />
+                                    <Stop color="#de554b" offset="0.4914089347079038" />
+                                    <Stop color="#aaaaaa" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

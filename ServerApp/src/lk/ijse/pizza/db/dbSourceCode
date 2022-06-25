@@ -1,0 +1,706 @@
+
+
+DROP DATABASE IF EXISTS pizzaExpress;
+
+CREATE DATABASE pizzaExpress;
+USE pizzaExpress;
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS customer;
+CREATE TABLE customer(
+  customerID VARCHAR (30) NOT NULL,
+  name VARCHAR (60) NOT NULL,
+  address_no VARCHAR (30),
+  address_street VARCHAR (30),
+  address_village VARCHAR (30),
+  address_city VARCHAR (30),
+  nic VARCHAR (30) NOT NULL,
+  tel_home VARCHAR (10),
+  tel_mobile VARCHAR (10),
+  email VARCHAR (60),
+  CONSTRAINT  PRIMARY KEY(customerID)
+);
+
+INSERT INTO customer VALUES
+  ('CUS-0001','Thushara Supun','56','Salmal Road','Waskaduwa','Kalutara','971296547V','0345615760','0718956231','Nothing'),
+  ('CUS-0002','Nimantha Akash','32/A','1st Lane','Katukurunda','Kalutara','924578965V','0342272977','0758963456','Nothing'),
+  ('CUS-0003','Kasun Nirmal','373/2','Jayasena Road','Wadduwa','Wadduwa','864578965V','0348974562','0778945632','Nothing'),
+  ('CUS-0004','Sahan Vimukthi','89/B','Namal Road','Nagoda','Kalutara','845678965V','0342212456','0718596123','Nothing'),
+  ('CUS-0005','A.K Silva','45/3','Mulatiyana Road','Nabada','Kalutara','824596784V','0342286586','0775865412','Nothing');
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS item;
+CREATE TABLE item(
+  itemCode VARCHAR (30) NOT NULL,
+  name VARCHAR (30) NOT NULL,
+  description VARCHAR (150),
+  size VARCHAR (30) NOT NULL,
+  price DOUBLE (10,2) NOT NULL,
+  other_detail VARCHAR (150),
+  CONSTRAINT PRIMARY KEY (itemCode)
+);
+
+INSERT INTO item VALUES
+  ('I-0001','Cheese Lovers','Rich tomato sauce with a triple layer of mozzarella cheese.','Small','510.00','Other-Nothing'),
+  ('I-0002','Cheese Lovers','Rich tomato sauce with a triple layer of mozzarella cheese.','Medium','995.00','Other-Nothing'),
+  ('I-0003','Cheese Lovers','Rich tomato sauce with a triple layer of mozzarella cheese.','Large','1770.00','Other-Nothing'),
+
+  ('I-0004','Devilled Chicken','Devilled chicken in spicy sauce with a double layer of mozzarella cheese.','Small','510.00','Other-Nothing'),
+  ('I-0005','Devilled Chicken','Devilled chicken in spicy sauce with a double layer of mozzarella cheese.','Medium','995.00','Other-Nothing'),
+  ('I-0006','Devilled Chicken','Devilled chicken in spicy sauce with a double layer of mozzarella cheese.','Large','1770.00','Other-Nothing'),
+
+
+  ('I-0007','Veggie Supreme','Mushrooms, tomatoes, onions, black olives and bell peppers with a double layer of mozzarella cheese.','Small','510.00','Other-Nothing'),
+  ('I-0008','Veggie Supreme','Mushrooms, tomatoes, onions, black olives and bell peppers with a double layer of mozzarella cheese.','Medium','995.00','Other-Nothing'),
+  ('I-0009','Veggie Supreme','Mushrooms, tomatoes, onions, black olives and bell peppers with a double layer of mozzarella cheese.','Large','1770.00','Other-Nothing'),
+
+  ('I-0010','Sausage Delight','Chicken sausages & onions with a double layer of mozzarella cheese. ','Small','382.00','Other-Nothing'),
+  ('I-0011','Sausage Delight','Chicken sausages & onions with a double layer of mozzarella cheese. ','Medium','746.00','Other-Nothing'),
+  ('I-0012','Sausage Delight','Chicken sausages & onions with a double layer of mozzarella cheese. ','Large','1328.00','Other-Nothing'),
+
+  ('I-0013','Spicy Seafood','A fiery mix of prawns, devilled fish, olives, Bell peppers & onions with a double layer of mozzarella cheese. ','Small','730.00','Other-Nothing'),
+  ('I-0014','Spicy Seafood','A fiery mix of prawns, devilled fish, olives, Bell peppers & onions with a double layer of mozzarella cheese. ','Medium','1400.00','Other-Nothing'),
+  ('I-0015','Spicy Seafood','A fiery mix of prawns, devilled fish, olives, Bell peppers & onions with a double layer of mozzarella cheese. ','Large','2550.00','Other-Nothing'),
+
+  ('I-0016','Cheesy Onion','Crispy onions with a double layer of mozzarella cheese. ','Small','410.00','Other-Nothing'),
+  ('I-0017','Cheesy Onion','Crispy onions with a double layer of mozzarella cheese. ','Medium','780.00','Other-Nothing'),
+  ('I-0018','Cheesy Onion','Crispy onions with a double layer of mozzarella cheese. ','Large','1450.00','Other-Nothing');
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS employee;
+CREATE TABLE employee(
+  employeeID VARCHAR(30) NOT NULL,
+	name VARCHAR(60) NOT NULL,
+	position VARCHAR (30) NOT NULL,
+	nic VARCHAR(15) NOT NULL,
+	address_no VARCHAR(30),
+	address_street VARCHAR(30),
+	address_village VARCHAR(30),
+	address_city VARCHAR(30),
+	tel_home VARCHAR(15),
+	tel_mobile VARCHAR(15),
+	other_detail VARCHAR(60),
+	CONSTRAINT PRIMARY KEY(employeeID)
+);
+
+
+INSERT INTO employee VALUES
+  ('EMP-001','A.K.N Fernando','Admin','8256745V','12/A','Flower Road','Katukurunda','Kalutara','0342245963','0712245781','other_detail-Nothing'),
+  ('EMP-002','T.K Silva','Chef','781698745V','45/2','2nd Lane','Waskaduwa','Kalutara','0345896751','0774596874','other_detail-Nothing'),
+  ('EMP-003','S.C Nilmini Perera','Reception','928697452V','12/B','Salmal Mawatha','Pothupitiya','Kalutara','0342245963','0754596842','other_detail-Nothing'),
+  ('EMP-004','M.P Dias','Chef','862456357V','152','Kanda Pansala Road','Wilegoda','Kalutara','0347651245','0784596451','other_detail-Nothing'),
+  ('EMP-005','Yomal S Perera','Deliver','882314596V','78/A','Mulatiyana Road','Potupitiya','Kalutara','0342256874','0768546953','other_detail-Nothing'),
+  ('EMP-006','A.T Kasun Jayasekara','Deliver','922145963V','14/2','Salmal Mawatha','Waskaduwa','Kalutara','0342256963','0715689456','other_detail-Nothing'),
+  ('EMP-007','A.S Nadini Kumari','Reception','936452147V','47/C','Flower Road','Nagoda','Kalutara','0342245786','0765896541','other_detail-Nothing');
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS orders;
+CREATE TABLE orders(
+  orderID VARCHAR (30) NOT NULL,
+  orderDate DATE,
+  customerID VARCHAR (30) NOT NULL,
+  totalAmount DOUBLE (10,2),
+  discount DOUBLE (10,2),
+  netAmount DOUBLE (10,2),
+  empID1_T1 TIME,
+  employeeID1 VARCHAR (30),
+  empID2_T1 TIME ,
+  employeeID2 VARCHAR (30),
+  empID2_T2 TIME ,
+  empID3_T1 TIME ,
+  employeeID3 VARCHAR (30),
+  empID3_T2 TIME ,
+  status VARCHAR (30),
+  CONSTRAINT PRIMARY KEY (orderID),
+  CONSTRAINT FOREIGN KEY (customerID) REFERENCES customer(customerID),
+  CONSTRAINT FOREIGN KEY (employeeID1) REFERENCES employee(employeeID),
+  CONSTRAINT FOREIGN KEY (employeeID2) REFERENCES employee(employeeID),
+  CONSTRAINT FOREIGN KEY (employeeID3) REFERENCES employee(employeeID)
+);
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS orderDetail;
+CREATE TABLE orderDetail(
+  orderID VARCHAR (30) NOT NULL,
+  itemCode VARCHAR (30) NOT NULL,
+  qty INT NOT NULL,
+  priceForQty DOUBLE (10,2) NOT NULL,
+  CONSTRAINT PRIMARY KEY (orderID , itemCode)
+);
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS payment;
+CREATE TABLE payment(
+  paymentID VARCHAR (30) NOT NULL,
+  orderID VARCHAR (30) NOT NULL,
+  employeeID VARCHAR (30) NOT NULL,
+  CONSTRAINT PRIMARY KEY (paymentID)
+);
+
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+
+DROP TABLE IF EXISTS userPass;
+CREATE TABLE userPass(
+  username VARCHAR (30),
+  password VARCHAR (30),
+  employeeID varchar (30),
+  CONSTRAINT PRIMARY KEY (username,password),
+  CONSTRAINT FOREIGN KEY (employeeID) REFERENCES employee(employeeID)
+);
+
+INSERT INTO userPass VALUES
+  ('admin','pass','EMP-001'),
+  ('reception','pass','EMP-007'),
+  ('chef','pass','EMP-002'),
+  ('deliver','pass','EMP-005');
+
+#-----------------------------------------------------------------------------------------------------------------------
+
+#*************************************** Procedures , Triggers & Functions *********************************************
+
+#---------------------------------------------Get Logged Employee Procedure --------------------------------------------
+DROP PROCEDURE IF EXISTS getLoggedEmployee;
+DELIMITER $$;
+CREATE PROCEDURE getLoggedEmployee(
+  IN username_vbl VARCHAR (30),
+  IN password_vbl VARCHAR (30)
+)
+BEGIN
+  select * from employee where employeeID=(select userPass.employeeID from userPass where username=username_vbl and password=password_vbl);
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Save Customer Procedure ------------------------------------------------
+DROP PROCEDURE  IF EXISTS saveCustomer;
+DELIMITER $$;
+CREATE PROCEDURE saveCustomer(
+  IN customerID_vbl VARCHAR (30),
+  IN name_vbl VARCHAR (60),
+  IN address_no_vbl VARCHAR (30),
+  IN address_street_vbl VARCHAR (30),
+  IN address_village_vbl VARCHAR (30),
+  IN address_city_vbl VARCHAR (30),
+  IN nic_vbl VARCHAR (30),
+  IN tel_home_vbl VARCHAR (10),
+  IN tel_mobile_vbl VARCHAR (10),
+  IN email_vbl VARCHAR (60)
+)
+BEGIN
+  insert into customer values (
+    customerID_vbl,
+    name_vbl,
+    address_no_vbl,
+    address_street_vbl,
+    address_village_vbl,
+    address_city_vbl,
+    nic_vbl,
+    tel_home_vbl,
+    tel_mobile_vbl,
+    email_vbl
+  );
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Update Customers Procedure ---------------------------------------------
+DROP PROCEDURE IF EXISTS updateCustomers;
+DELIMITER $$;
+CREATE PROCEDURE updateCustomer(
+  IN customerID_vbl VARCHAR (30),
+  IN name_vbl VARCHAR (60),
+  IN address_no_vbl VARCHAR (30),
+  IN address_street_vbl VARCHAR (30),
+  IN address_village_vbl VARCHAR (30),
+  IN address_city_vbl VARCHAR (30),
+  IN nic_vbl VARCHAR (30),
+  IN tel_home_vbl VARCHAR (10),
+  IN tel_mobile_vbl VARCHAR (10),
+  IN email_vbl VARCHAR (60)
+)
+BEGIN
+  update customer set
+    name=name_vbl,
+    address_no=address_no_vbl,
+    address_street=address_street_vbl,
+    address_village=address_village_vbl,
+    address_city=address_city_vbl,
+    nic=nic_vbl,
+    tel_home=tel_home_vbl,
+    tel_mobile=tel_mobile_vbl,
+    email=email_vbl
+  where customerID=customerID_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Get All Customers Procedure --------------------------------------------
+DROP PROCEDURE IF EXISTS getAllCustomers;
+DELIMITER $$;
+CREATE PROCEDURE getAllCustomers()
+BEGIN
+  select * from customer;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Delete Customer Procedure ----------------------------------------------
+DROP PROCEDURE IF EXISTS deleteCustomer;
+DELIMITER $$;
+CREATE PROCEDURE deleteCustomer(
+  IN customerID_vbl VARCHAR (30)
+)
+BEGIN
+  delete from customer where customerID=customerID_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Get Customer Procedure -------------------------------------------------
+DROP PROCEDURE IF EXISTS getCustomer;
+DELIMITER $$;
+CREATE PROCEDURE getCustomer(
+  IN customerID_vbl VARCHAR (30)
+)
+BEGIN
+  select * from customer where customerID=customerID_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Generate CustomerID Procedure ------------------------------------------
+DROP PROCEDURE IF EXISTS generateCustomerID;
+DELIMITER $$;
+CREATE PROCEDURE generateCustomerID()
+BEGIN
+  select customerID from customer order by 1 desc limit 1;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Search Customer Procedure --------------------------------------------
+DROP PROCEDURE IF EXISTS searchCustomer;
+DELIMITER $$;
+CREATE PROCEDURE searchCustomer(
+  IN searchText VARCHAR (30)
+)
+BEGIN
+  DECLARE newSearchText VARCHAR(30);
+  set newSearchText=concat("%",searchText,"%");
+  select * from customer where customerID like newSearchText or name like newSearchText or nic like newSearchText;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Get All Items Procedure ----------------------------------------------
+DROP PROCEDURE IF EXISTS getAllItems;
+DELIMITER $$;
+CREATE PROCEDURE getAllItems()
+BEGIN
+  select * from item;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Save Item Procedure --------------------------------------------------
+DROP PROCEDURE IF EXISTS saveItem;
+DELIMITER $$;
+CREATE PROCEDURE saveItem(
+  IN itemCode_vbl VARCHAR (30),
+  IN name_vbl VARCHAR (30),
+  IN description_vbl VARCHAR (150),
+  IN size_vbl VARCHAR (30),
+  IN price_vbl double (10,2),
+  IN other_datail_vbl VARCHAR (150)
+)
+BEGIN
+  insert into item values (itemCode_vbl, name_vbl, description_vbl, size_vbl, price_vbl, other_datail_vbl );
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Generate Item Code Procedure -----------------------------------------
+DROP PROCEDURE IF EXISTS generateItemCode;
+DELIMITER $$;
+CREATE PROCEDURE generateItemCode()
+BEGIN
+  select itemCode from item order by 1 desc limit 1;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Delete Item Procedure ------------------------------------------------
+DROP PROCEDURE IF EXISTS deleteItem;
+DELIMITER $$;
+CREATE PROCEDURE deleteItem(
+  IN itemCode_vbl VARCHAR (30)
+)
+BEGIN
+  delete from item where itemCode=itemCode_vbl;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Get Item Procedure ---------------------------------------------------
+DROP PROCEDURE IF EXISTS getItem;
+DELIMITER $$;
+CREATE PROCEDURE getItem(
+  IN itemCode_vbl VARCHAR (30)
+)
+BEGIN
+  select * from item where itemCode=itemCode_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------Update Item Procedure --------------------------------------------------
+DROP PROCEDURE IF EXISTS updateItem;
+DELIMITER $$;
+CREATE PROCEDURE updateItem(
+  IN itemCode_vbl VARCHAR (30),
+  IN name_vbl VARCHAR (30),
+  IN description_vbl VARCHAR (150),
+  IN size_vbl VARCHAR (30),
+  IN price_vbl double (10,2),
+  IN other_datail_vbl VARCHAR (150)
+)
+BEGIN
+  update item set
+    name=name_vbl,
+    description=description_vbl,
+    size=size_vbl,
+    price=price_vbl,
+    other_detail=other_datail_vbl
+  where itemCode=itemCode_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------------------Search Item Procedure --------------------------------------------
+DROP PROCEDURE IF EXISTS searchItem;
+DELIMITER $$;
+CREATE PROCEDURE searchItem(
+  IN searchText VARCHAR (30)
+)
+BEGIN
+  DECLARE newSearchText VARCHAR(30);
+  set newSearchText=concat("%",searchText,"%");
+  select * from item where itemCode like newSearchText or name like newSearchText or size like newSearchText;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Generate Order ID Procedure ------------------------------------------
+DROP PROCEDURE IF EXISTS generateOrderID;
+DELIMITER $$;
+CREATE PROCEDURE generateOrderID()
+BEGIN
+  select orderID from orders order by 1 desc limit 1;
+END$$;
+DELIMITER ;
+
+
+#-------------------------------------------------Get All Orders Procedure--- ------------------------------------------
+DROP PROCEDURE IF EXISTS getAllOrders;
+DELIMITER $$;
+CREATE PROCEDURE getAllOrders()
+BEGIN
+  select * from orders;
+END$$;
+DELIMITER ;
+
+
+#--------------------------------------------------Save Order Procedure-------------------------------------------------
+DROP PROCEDURE IF EXISTS saveOrder;
+DELIMITER $$;
+CREATE PROCEDURE saveOrder(
+  IN orderID_vbl VARCHAR (30),
+  IN orderDate_vbl VARCHAR (30),
+  IN customerID_vbl VARCHAR (30),
+  IN totalAmount_vbl DOUBLE (10,2),
+  IN discount_vbl DOUBLE (10,2),
+  IN netAmount_vbl DOUBLE (10,2),
+  IN orderTIme_vbl VARCHAR (30),
+  IN employeeID_vbl VARCHAR (30),
+  IN status_vbl VARCHAR (30)
+)
+BEGIN
+  insert into orders values (orderID_vbl, orderDate_vbl, customerID_vbl, totalAmount_vbl, discount_vbl, netAmount_vbl, orderTIme_vbl, employeeID_vbl, null, null, null, null, null, null, status_vbl);
+END$$;
+DELIMITER ;
+
+#----------------------------------------------Save Order Detail Procedure----------------------------------------------
+DROP PROCEDURE IF EXISTS saveOrderDetail;
+DELIMITER $$;
+CREATE PROCEDURE saveOrderDetail(
+  IN orderID_vbl VARCHAR (30),
+  IN itemCode_vbl VARCHAR (30),
+  IN qty_vbl INT,
+  IN priceForQty_vbl DOUBLE (10,2)
+)
+BEGIN
+  insert into orderDetail values(orderID_vbl, itemCode_vbl, qty_vbl, priceForQty_vbl);
+END$$;
+DELIMITER ;
+
+
+#--------------------------------------------------Get Order Procedure--------------------------------------------------
+DROP PROCEDURE IF EXISTS getOrder;
+DELIMITER $$;
+CREATE PROCEDURE getOrder(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select * from orders where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#----------------------------------------------Get Order Details Procedure----------------------------------------------
+DROP PROCEDURE IF EXISTS getOrderDetail;
+DELIMITER $$;
+CREATE PROCEDURE getOrderDetail(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select * from orderDetail where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#--------------------------------------------------Delete Order Procedure-----------------------------------------------
+DROP PROCEDURE IF EXISTS deleteOrder;
+DELIMITER $$;
+CREATE PROCEDURE deleteOrder(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+    delete from orders where orderID=orderID_vbl;
+    delete from orderDetail where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#--------------------------------------------------Search Order Procedure-----------------------------------------------
+DROP PROCEDURE IF EXISTS searchOrder;
+DELIMITER $$;
+CREATE PROCEDURE searchOrder(
+  IN searchText VARCHAR (30)
+)
+BEGIN
+  DECLARE newSearchText VARCHAR(30);
+  set newSearchText=concat("%",searchText,"%");
+  select * from orders where orderDate like newSearchText or customerID like newSearchText or status like newSearchText;
+END$$;
+DELIMITER ;
+
+
+#---------------------------------------------Get All Queued Orders Procedure-------------------------------------------
+DROP PROCEDURE IF EXISTS getAllQueuedOrders;
+DELIMITER $$;
+CREATE PROCEDURE getAllQueuedOrders()
+BEGIN
+  select * from orders where status="Queue";
+END$$;
+DELIMITER ;
+
+
+#---------------------------------------------Get Chef Order Details Procedure------------------------------------------
+DROP PROCEDURE IF EXISTS getChefOrderDetail;
+DELIMITER $$;
+CREATE PROCEDURE getChefOrderDetail(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select orders.orderID, item.name, item.size, orderDetail.qty  from item, orders, orderDetail where orders.orderID=orderDetail.orderID and orderDetail.itemCode=item.itemCode and orderDetail.orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+
+#---------------------------------------------Chef Accept Order Procedure-----------------------------------------------
+DROP PROCEDURE IF EXISTS chefAcceptOrder;
+DELIMITER $$;
+CREATE PROCEDURE chefAcceptOrder(
+  IN orderID_vbl VARCHAR (30),
+  IN time_vbl TIME ,
+  IN chefID_vbl VARCHAR (30),
+  IN status_vbl VARCHAR (30)
+)
+BEGIN
+  update orders set empID2_T1=time_vbl, employeeID2=chefID_vbl, status=status_vbl where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+
+#---------------------------------------------Chef Done Order Procedure-----------------------------------------------
+DROP PROCEDURE IF EXISTS chefDoneOrder;
+DELIMITER $$;
+CREATE PROCEDURE chefDoneOrder(
+  IN orderID_vbl VARCHAR (30),
+  IN time_vbl TIME ,
+  IN status_vbl VARCHAR (30)
+)
+BEGIN
+  update orders set empID2_T2=time_vbl, status=status_vbl where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------Get All Chef Completed Procedure----------------------------------------------
+DROP PROCEDURE IF EXISTS getAllChefCompletedOrders;
+DELIMITER $$;
+CREATE PROCEDURE getAllChefCompletedOrders(
+  IN chefID_vbl VARCHAR (30)
+)
+BEGIN
+  select orderID, orderDate, empID2_T1, empID2_T2, status from orders where employeeID2=chefID_vbl;
+END$$;
+DELIMITER ;
+
+
+#--------------------------------------Get All Chef Completed Order Items Procedure-------------------------------------
+DROP PROCEDURE IF EXISTS getChefCompletedOrderItem;
+DELIMITER $$;
+CREATE PROCEDURE getChefCompletedOrderItem(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select orderDetail.itemCode, item.name, item.size, orderDetail.qty  from item, orderDetail where orderDetail.itemCode=item.itemCode and orderDetail.orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#---------------------------------------------Get All Cooked Orders Procedure-------------------------------------------
+DROP PROCEDURE IF EXISTS getAllCookedOrders;
+DELIMITER $$;
+CREATE PROCEDURE getAllCookedOrders()
+BEGIN
+  select orders.orderID, orders.empID2_T2, customer.name, customer.address_no, customer.address_street, customer.address_village, customer.address_city, customer.tel_home, customer.tel_mobile from orders, customer where orders.customerID=customer.customerID and orders.status='Cooked';
+END$$;
+DELIMITER ;
+
+
+#---------------------------------------------Get Deli Order Details Procedure------------------------------------------
+DROP PROCEDURE IF EXISTS getDeliOrderDetail;
+DELIMITER $$;
+CREATE PROCEDURE getDeliOrderDetail(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select item.itemCode, item.name, item.size, orderDetail.qty  from item, orders, orderDetail where orders.orderID=orderDetail.orderID and orderDetail.itemCode=item.itemCode and orderDetail.orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+
+#---------------------------------------------Deli Accept Order Procedure-----------------------------------------------
+DROP PROCEDURE IF EXISTS deliAcceptOrder;
+DELIMITER $$;
+CREATE PROCEDURE deliAcceptOrder(
+  IN orderID_vbl VARCHAR (30),
+  IN deliID_vbl VARCHAR (30),
+  IN time_vbl TIME ,
+  IN status_vbl VARCHAR (30)
+)
+BEGIN
+  update orders set empID3_T1=time_vbl, employeeID3=deliID_vbl, status=status_vbl where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+
+#---------------------------------------------Deli Done Order Procedure-----------------------------------------------
+DROP PROCEDURE IF EXISTS deliDoneOrder;
+DELIMITER $$;
+CREATE PROCEDURE deliDoneOrder(
+  IN orderID_vbl VARCHAR (30),
+  IN time_vbl TIME ,
+  IN status_vbl VARCHAR (30)
+)
+BEGIN
+  update orders set empID3_T2=time_vbl, status=status_vbl where orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------get All Delivered Orders Procedure--------------------------------------------
+DROP PROCEDURE IF EXISTS getAllDeliveredOrders;
+DELIMITER $$;
+CREATE PROCEDURE getAllDeliveredOrders(
+  IN deliID_vbl VARCHAR (30)
+)
+BEGIN
+  select orders.orderID, orders.orderDate, orders.empID3_T1, orders.empID3_T2, customer.name, customer.address_no, customer.address_street, customer.address_village, customer.address_city, customer.tel_home, customer.tel_mobile, orders.status from orders, customer where orders.customerID=customer.customerID and orders.employeeID3=deliID_vbl;
+END$$;
+DELIMITER ;
+
+
+
+#-----------------------------------------get All Delivered Order Details Procedure-------------------------------------
+DROP PROCEDURE IF EXISTS getAllDeliveredOrderItems;
+DELIMITER $$;
+CREATE PROCEDURE getAllDeliveredOrderItems(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select item.itemCode, item.name, item.size, orderDetail.qty  from item, orders, orderDetail where orders.orderID=orderDetail.orderID and orderDetail.itemCode=item.itemCode and orderDetail.orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+
+#-----------------------------------------get All Orders For Admin Procedure--------------------------------------------
+DROP PROCEDURE IF EXISTS adminGetAllOrders;
+DELIMITER $$;
+CREATE PROCEDURE adminGetAllOrders()
+BEGIN
+  select orderID, orderDate, customerID, totalAmount, discount, netAmount, status, employeeID1, empID1_T1,  employeeID2, empID2_T1, empID2_T2, employeeID3, empID3_T1, empID3_T2 from orders;
+END$$;
+DELIMITER ;
+
+
+#---------------------------------------get All Orders Details For Admin Procedure--------------------------------------
+DROP PROCEDURE IF EXISTS adminGetOrderDetail;
+DELIMITER $$;
+CREATE PROCEDURE adminGetOrderDetail(
+  IN orderID_vbl VARCHAR (30)
+)
+BEGIN
+  select item.itemCode, item.name, item.size, orderDetail.qty  from item, orders, orderDetail where orders.orderID=orderDetail.orderID and orderDetail.itemCode=item.itemCode and orderDetail.orderID=orderID_vbl;
+END$$;
+DELIMITER ;
+
+#------------------------------------------Search Orders For Admin Procedure--------------------------------------------
+DROP PROCEDURE IF EXISTS adminSearchOrders;
+DELIMITER $$;
+CREATE PROCEDURE adminSearchOrders(
+  IN searchText VARCHAR (60)
+)
+BEGIN
+  DECLARE newSearchText VARCHAR(30);
+  set newSearchText=concat("%",searchText,"%");
+  select orderID, orderDate, customerID, totalAmount, discount, netAmount, status, employeeID1, empID1_T1,  employeeID2, empID2_T1, empID2_T2, employeeID3, empID3_T1, empID3_T2 from orders where orderDate like newSearchText or customerID like newSearchText or status like newSearchText ;
+END$$;
+DELIMITER ;
+

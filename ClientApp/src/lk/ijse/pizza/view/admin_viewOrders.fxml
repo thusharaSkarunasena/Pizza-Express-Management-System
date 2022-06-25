@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="admin_viewOrdersAnchPane" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pizza.controller.Admin_ViewOrdersController">
+   <children>
+      <Pane prefHeight="650.0" prefWidth="950.0">
+         <children>
+            <ImageView fitHeight="590.0" fitWidth="969.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/otherBg.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="60.0" prefWidth="950.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="120.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="120.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="240.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="360.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="480.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="600.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="720.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="840.0">
+                     <image>
+                        <Image url="@../asset/mainDashBG1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="60.0" prefWidth="950.0">
+                     <children>
+                        <Label layoutX="438.0" layoutY="19.0" text="Pizza Express Management System" textFill="#df574b">
+                           <font>
+                              <Font name="Unicorn Regular" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="866.0" layoutY="5.0">
+                           <image>
+                              <Image url="@../asset/pizzaLogo2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="backToDashIcon" layoutX="20.0" layoutY="8.0" onMouseClicked="#backToDashIcon_onMouseClicked">
+                           <image>
+                              <Image url="@../asset/icons8-back-48(1).png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutY="60.0" opacity="0.9" prefHeight="590.0" prefWidth="950.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutX="14.0" layoutY="13.0" prefHeight="381.0" prefWidth="920.0" style="-fx-border-color: #C7C7C7; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <TextField fx:id="searchBoxTF" layoutX="679.0" layoutY="15.0" onKeyReleased="#searchBoxTF_keyReleased" onMouseClicked="#searchBox_onMouseClick" prefHeight="25.0" prefWidth="195.0" promptText="Search" />
+                        <ImageView layoutX="850.0" layoutY="20.0">
+                           <image>
+                              <Image url="@../asset/icons8_Search_16px_1.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="orderDetailsTbl" layoutX="12.0" layoutY="51.0" onMouseClicked="#orderDetailsTbl_onMouserClick" prefHeight="312.0" prefWidth="898.0">
+                           <columns>
+                              <TableColumn prefWidth="168.0" text="Order ID" />
+                              <TableColumn maxWidth="200.0" prefWidth="88.0" text="Date" />
+                              <TableColumn prefWidth="166.0" text="Customer ID" />
+                              <TableColumn prefWidth="115.0" text="Total" />
+                              <TableColumn prefWidth="110.0" text="Discount" />
+                              <TableColumn prefWidth="133.0" text="Net Amount" />
+                              <TableColumn maxWidth="117.0" prefWidth="117.0" text="Status" />
+                           </columns>
+                        </TableView>
+                        <JFXDatePicker fx:id="startDateDP" defaultColor="#df574b" disable="true" layoutX="81.0" layoutY="16.0" onAction="#startDateDP_onAction" promptText="Start Date" />
+                        <JFXDatePicker fx:id="endDateDP" defaultColor="#df574b" disable="true" layoutX="328.0" layoutY="15.0" onAction="#endDateDP_onAction" promptText="End Date" />
+                        <ImageView fx:id="reloadIcon" layoutX="14.0" layoutY="13.0" onMouseClicked="#reloadIcon_onMouseClicked">
+                           <image>
+                              <Image url="@../asset/icons8_Reset_32px.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <HBox layoutX="17.0" layoutY="18.0" onMouseClicked="#reloadIcon_onMouseClicked" prefHeight="22.0" prefWidth="25.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></HBox>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="11.0" layoutY="406.0" prefHeight="161.0" prefWidth="920.0" style="-fx-border-color: #C7C7C7; -fx-border-radius: 15; -fx-border-width: 2; -fx-background-color: #ffffff;">
+                     <children>
+                        <TableView fx:id="itemDetailsTbl" layoutX="562.0" layoutY="10.0" prefHeight="142.0" prefWidth="340.0">
+                           <columns>
+                              <TableColumn prefWidth="87.0" text="Item Code" />
+                              <TableColumn maxWidth="200.0" prefWidth="173.0" text="Item Name &amp; Size" />
+                              <TableColumn maxWidth="79.0" prefWidth="79.0" text="Qty" />
+                           </columns>
+                        </TableView>
+                        <JFXTextField fx:id="chef_empIDTF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="216.0" layoutY="33.0" mouseTransparent="true" promptText="Employee ID" />
+                        <JFXTextField fx:id="deli_T1TF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="394.0" layoutY="83.0" mouseTransparent="true" promptText="Accepted Time" />
+                        <JFXTextField fx:id="deli_empIDTF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="394.0" layoutY="33.0" mouseTransparent="true" promptText="Employee ID" />
+                        <JFXTextField fx:id="chef_T1TF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="216.0" layoutY="83.0" mouseTransparent="true" promptText="Accepted Time" />
+                        <JFXTextField fx:id="deli_T2TF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="394.0" layoutY="128.0" mouseTransparent="true" promptText="Finished Time" />
+                        <JFXTextField fx:id="recep_t1TF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="39.0" layoutY="83.0" mouseTransparent="true" promptText="Queued Time" />
+                        <JFXTextField fx:id="recep_empIDTF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="39.0" layoutY="36.0" mouseTransparent="true" promptText="Employee ID" />
+                        <JFXTextField fx:id="chef_T2TF" editable="false" focusColor="#df574b" labelFloat="true" layoutX="216.0" layoutY="128.0" mouseTransparent="true" promptText="Finished Time" />
+                        <Label layoutX="14.0" layoutY="8.0" text="Reception -&gt;" textFill="#8f8f8f" />
+                        <Label layoutX="196.0" layoutY="8.0" text="Chef -&gt;" textFill="#8f8f8f" />
+                        <Label layoutX="359.0" layoutY="8.0" text="Deliverer -&gt;" textFill="#8f8f8f" />
+                     </children>
+                  </Pane>
+               </children></Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

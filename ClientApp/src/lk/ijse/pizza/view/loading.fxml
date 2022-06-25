@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loadingAnchPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pizza.controller.LoadingController">
+   <children>
+      <ImageView fitHeight="612.0" fitWidth="612.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-16.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../asset/loadingBG.jpg" />
+         </image></ImageView>
+      <Pane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="94.0" layoutY="42.0" text="Wel Come" textFill="WHITE">
+               <font>
+                  <Font name="Akbar" size="36.0" />
+               </font></Label>
+            <Label layoutX="282.0" layoutY="138.0" text="Pizza Express" textFill="WHITE">
+               <font>
+                  <Font name="Unicorn Regular" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="258.0" layoutY="64.0" prefHeight="62.0" prefWidth="29.0" text="to" textFill="WHITE">
+               <font>
+                  <Font name="Argor Man Scaqh" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="282.0" layoutY="322.0" text="Loading..." textFill="WHITE">
+               <font>
+                  <Font name="Boston Traffic" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="43.0" fitWidth="48.0" layoutX="230.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/loadingGif.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/pizzaExpressLogo1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
